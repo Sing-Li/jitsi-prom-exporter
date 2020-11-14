@@ -14,7 +14,7 @@ prosodyctl --config <abs path to jitsi-meet.cfg.lua> register <user> <auth-domai
 ```
 
 ## Binary
-Clone this repo into your `$GOPATH/src/` directory. In the exporter directroy run `go get ./...` which creates the `exporter` binary in `$GOPTAH/bin/`. You can run this binary, it will still pull its configuration (see below) from the environment.
+Copy the `exporter` directory into your `$GOPATH/src/` directory. In the newly created `exporter` directroy run `go get ./...`,  then `go build ./...`,  then `go install ./...` which then creates the `exporter` binary in `$GOPTAH/bin/`. You can run this binary, it will still pull its configuration (see below) from the environment.
 
 ## Docker container
 There is an image available on [docker hub](https://hub.docker.com/r/karrieretutor/jitsi) `karrieretutor/jitsi:prom-exporter-latest`. Alternatively build it yourself with the provided dockerfile. The configuration is provided via environment (see below). By running it as a docker container you gain the advantage of choosing the port which is used for publishing the metrics, see [docker cli reference](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p---expose).
