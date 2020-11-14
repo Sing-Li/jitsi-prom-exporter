@@ -12,6 +12,7 @@ You will have to create a XMPP user in Prosody, do this with:
 ```bash
 prosodyctl --config <abs path to jitsi-meet.cfg.lua> register <user> <auth-domain> <password>
 ```
+If you are creating this user on the default domain, make sure you add it to auth domain `@auth.jitsi.meet` and not `@jitsi.meet`.  Since the domain `@jitsi.meet` defaults to `anonymous` auth, this addition will not be successful.
 
 ## Binary
 Copy the `exporter` directory into your `$GOPATH/src/` directory. In the newly created `exporter` directroy run `go get ./...`,  then `go build ./...`,  then `go install ./...` which then creates the `exporter` binary in `$GOPTAH/bin/`. You can run this binary, it will still pull its configuration (see below) from the environment.
